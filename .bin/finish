@@ -19,19 +19,20 @@ echo "Type the commit message for this commit: "
 
 read commit
 
+
 rm -rf .bin
 
 rm package.json
 cp package.json.tmpl package.json
 
-sed -i.bak "s/GITURL/$githttp/g" package.json
-sed -i.bak "s/REPOURL/$repourl/g" package.json
-sed -i.bak "s/REPONAME/$reponame/g" package.json
+sed -i.bak "s#GITURL#$githttp#g" package.json
+sed -i.bak "s#REPOURL#$repourl#g" package.json
+sed -i.bak "s#REPONAME#$reponame#g" package.json
 
 rm package.json.bak
 
 git init
-git add README.md
+git add -A
 git commit -m "$commit"
 git remote add origin $gitssh
 git push -u origin master
