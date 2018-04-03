@@ -24,9 +24,11 @@ rm -rf .bin
 rm package.json
 cp package.json.tmpl package.json
 
-sed -i 's/GITURL/$githttp/g' package.json
-sed -i 's/REPOURL/$repourl/g' package.json
-sed -i 's/REPONAME/$reponame/g' package.json
+sed -i.bak 's/GITURL/$githttp/g' package.json
+sed -i.bak 's/REPOURL/$repourl/g' package.json
+sed -i.bak 's/REPONAME/$reponame/g' package.json
+
+rm package.json.bak
 
 git init
 git add README.md
