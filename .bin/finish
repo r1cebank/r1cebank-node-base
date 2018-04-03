@@ -30,6 +30,7 @@ sed -i.bak "s#REPOURL#$repourl#g" package.json
 sed -i.bak "s#REPONAME#$reponame#g" package.json
 
 rm package.json.bak
+rm package.json.tmpl
 
 git init
 git add -A
